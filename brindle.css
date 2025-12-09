@@ -181,7 +181,7 @@ body {
 .landing-left {
   flex: 0 0 50%;
   background-color: var(--brownish-grey);
-  padding: 8rem 4rem 4rem;
+  padding: calc(var(--header-height) + 4rem) 4rem 4rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1521,7 +1521,7 @@ body {
 
   .landing-left {
     flex: 1;
-    padding: 6rem 2rem 3rem;
+    padding: calc(var(--header-height) + 3rem) 2rem 3rem;
   }
 
   .landing-right {
@@ -1572,7 +1572,7 @@ body {
   }
 
   .landing-left {
-    padding: 5rem 1.5rem 2rem;
+    padding: calc(var(--header-height) + 2rem) 1.5rem 2rem;
   }
 
   .landing-title {
@@ -1819,7 +1819,7 @@ body {
   }
 
   .landing-left {
-    padding: 4rem 1rem 1.5rem;
+    padding: calc(var(--header-height) + 1.5rem) 1rem 1.5rem;
   }
 
   .landing-title {
