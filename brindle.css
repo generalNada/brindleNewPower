@@ -680,7 +680,7 @@ body {
   min-height: 600px;
   height: auto;
   border-radius: 16px;
-  overflow: visible;
+  overflow: hidden;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   background-color: var(--brownish-grey);
 }
@@ -691,6 +691,7 @@ body {
   background-color: var(--brownish-grey);
   height: auto;
   min-height: 600px;
+  overflow: hidden;
 }
 
 .gallery-carousel-slide-content {
@@ -699,16 +700,20 @@ body {
   min-height: 600px;
   height: auto;
   align-items: stretch;
+  overflow: hidden;
 }
 
 .gallery-carousel-slide-image {
   flex: 0 0 60%;
   width: 60%;
+  max-width: 60%;
   height: 100%;
+  max-height: 100%;
   object-fit: contain;
   object-position: center;
   display: block;
   background-color: var(--brownish-grey);
+  overflow: hidden;
 }
 
 .gallery-carousel-slide-text {
@@ -873,7 +878,7 @@ body {
   min-height: 600px;
   height: auto;
   border-radius: 16px;
-  overflow: visible;
+  overflow: hidden;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   background-color: var(--brownish-grey);
 }
@@ -884,6 +889,7 @@ body {
   background-color: var(--brownish-grey);
   height: auto;
   min-height: 600px;
+  overflow: hidden;
 }
 
 .carousel-slide-content {
@@ -892,18 +898,22 @@ body {
   min-height: 600px;
   height: auto;
   align-items: stretch;
+  overflow: hidden;
 }
 
 .carousel-slide-image {
   flex: 0 0 60%;
   width: 60%;
+  max-width: 60%;
   height: 100%;
+  max-height: 100%;
   object-fit: contain;
   object-position: center;
   display: block;
   background-color: var(--brownish-grey);
   cursor: pointer;
   transition: opacity 0.3s ease;
+  overflow: hidden;
 }
 
 .carousel-slide-image:hover {
