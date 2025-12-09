@@ -236,6 +236,7 @@ function initializeGallery() {
     slidesPerView: 1,
     spaceBetween: 0,
     loop: galleryImages.length > 1,
+    autoHeight: true,
     allowTouchMove: true,
     touchRatio: 1,
     touchAngle: 45,
@@ -268,6 +269,11 @@ function initializeGallery() {
     effect: "slide",
     speed: 600,
     autoplay: false,
+    on: {
+      slideChange: function() {
+        this.updateAutoHeight();
+      }
+    }
   });
 }
 
@@ -467,6 +473,7 @@ function initializeCarousel() {
     slidesPerView: 1,
     spaceBetween: 0,
     loop: carouselData.length > 1,
+    autoHeight: true,
     allowTouchMove: true,
     touchRatio: 1,
     touchAngle: 45,
@@ -499,6 +506,11 @@ function initializeCarousel() {
     effect: "slide",
     speed: 600,
     autoplay: false,
+    on: {
+      slideChange: function() {
+        this.updateAutoHeight();
+      }
+    }
   });
 }
 
