@@ -215,7 +215,7 @@ body {
 }
 
 .landing-inset-image {
-  flex: 0 0 280px;
+  flex: 0 0 200px;
   min-width: 0;
 }
 
@@ -1535,14 +1535,15 @@ body {
   }
 
   .landing-content-wrapper {
-    flex-direction: column;
+    flex-direction: row;
     gap: 1.5rem;
+    align-items: flex-start;
   }
 
   .landing-inset-image {
-    flex: 0 0 auto;
-    width: 100%;
-    max-width: 400px;
+    flex: 0 0 150px;
+    width: 150px;
+    max-width: 150px;
   }
 
   .header-container {
@@ -1585,12 +1586,15 @@ body {
   }
 
   .landing-content-wrapper {
-    flex-direction: column;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: flex-start;
   }
 
   .landing-inset-image {
-    width: 100%;
-    max-width: 100%;
+    flex: 0 0 120px;
+    width: 120px;
+    max-width: 120px;
   }
 
   .contact-hero {
@@ -1826,8 +1830,20 @@ body {
     font-size: 2rem;
   }
 
+  .landing-content-wrapper {
+    flex-direction: row;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+
+  .landing-inset-image {
+    flex: 0 0 100px;
+    width: 100px;
+    max-width: 100px;
+  }
+
   .landing-description {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     line-height: 1.6;
   }
 
