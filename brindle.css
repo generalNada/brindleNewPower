@@ -1418,7 +1418,9 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  background-color: rgba(0, 0, 0, 0.95);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1427,6 +1429,8 @@ body {
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
   padding: 2rem;
+  overflow: hidden;
+  touch-action: none;
 }
 
 .image-modal.active {
@@ -1436,21 +1440,26 @@ body {
 
 .image-modal-content {
   position: relative;
-  max-width: 95%;
-  max-height: 95%;
+  max-width: 100%;
+  max-height: 100%;
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 .image-modal-image {
   max-width: 100%;
-  max-height: 95vh;
+  max-height: 100%;
   width: auto;
   height: auto;
   object-fit: contain;
   border-radius: 8px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  display: block;
 }
 
 .image-modal-close {
@@ -1613,16 +1622,27 @@ body {
     font-size: 2.5rem;
     width: 45px;
     height: 45px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.2);
     border-radius: 50%;
+    z-index: 10001;
   }
 
   .image-modal {
-    padding: 1rem;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0.98);
+  }
+
+  .image-modal-content {
+    padding: 3rem 1rem 1rem;
+    max-width: 100%;
+    max-height: 100%;
   }
 
   .image-modal-image {
-    max-height: 90vh;
+    max-width: 100%;
+    max-height: calc(100vh - 4rem);
+    width: auto;
+    height: auto;
   }
 
   .content-column {
@@ -1845,19 +1865,30 @@ body {
   .image-modal-close {
     top: 10px;
     right: 10px;
-    font-size: 2.5rem;
-    width: 45px;
-    height: 45px;
-    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 2rem;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.3);
     border-radius: 50%;
+    z-index: 10001;
   }
 
   .image-modal {
-    padding: 0.5rem;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0.98);
+  }
+
+  .image-modal-content {
+    padding: 2.5rem 0.5rem 0.5rem;
+    max-width: 100%;
+    max-height: 100%;
   }
 
   .image-modal-image {
-    max-height: 85vh;
+    max-width: 100%;
+    max-height: calc(100vh - 3rem);
+    width: auto;
+    height: auto;
   }
 
   .carousel-wrapper {

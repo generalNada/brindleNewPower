@@ -710,6 +710,13 @@ function setupBrowserHistory() {
 
 // Expand image function
 function expandImage(imageSrc, altText) {
+  // Prevent body scroll and hide overflow
+  const scrollY = window.scrollY;
+  document.body.style.position = "fixed";
+  document.body.style.top = `-${scrollY}px`;
+  document.body.style.width = "100%";
+  document.body.style.overflow = "hidden";
+  
   // Create modal overlay
   const modal = document.createElement("div");
   modal.className = "image-modal";
@@ -721,23 +728,22 @@ function expandImage(imageSrc, altText) {
   `;
 
   document.body.appendChild(modal);
-  document.body.style.overflow = "hidden"; // Prevent background scrolling
 
   // Close on X button click
   const closeBtn = modal.querySelector(".image-modal-close");
-  closeBtn.addEventListener("click", () => closeImageModal(modal));
+  closeBtn.addEventListener("click", () => closeImageModal(modal, scrollY));
 
   // Close on overlay click (outside image)
   modal.addEventListener("click", (e) => {
-    if (e.target === modal) {
-      closeImageModal(modal);
+    if (e.target === modal || e.target.classList.contains("image-modal-content")) {
+      closeImageModal(modal, scrollY);
     }
   });
 
   // Close on Escape key
   const escapeHandler = (e) => {
     if (e.key === "Escape") {
-      closeImageModal(modal);
+      closeImageModal(modal, scrollY);
       document.removeEventListener("keydown", escapeHandler);
     }
   };
@@ -750,11 +756,18 @@ function expandImage(imageSrc, altText) {
 }
 
 // Close image modal function
-function closeImageModal(modal) {
+function closeImageModal(modal, scrollY) {
   modal.classList.remove("active");
   setTimeout(() => {
     document.body.removeChild(modal);
-    document.body.style.overflow = ""; // Restore scrolling
+    // Restore body scroll position
+    document.body.style.position = "";
+    document.body.style.top = "";
+    document.body.style.width = "";
+    document.body.style.overflow = "";
+    if (scrollY !== undefined) {
+      window.scrollTo(0, scrollY);
+    }
   }, 300);
 }
 
