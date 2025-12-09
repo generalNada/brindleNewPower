@@ -235,7 +235,8 @@ function initializeGallery() {
   const gallerySwiper = new Swiper(".gallery-carousel-swiper", {
     slidesPerView: 1,
     spaceBetween: 0,
-    loop: false,
+    loop: true,
+    loopAdditionalSlides: 2,
     initialSlide: 0,
     autoHeight: true,
     allowTouchMove: true,
@@ -276,9 +277,6 @@ function initializeGallery() {
       }
     }
   });
-  
-  // Ensure we start at the first slide
-  gallerySwiper.slideTo(0, 0);
 }
 
 // Carousel data - using slideImages with project information
@@ -476,7 +474,8 @@ function initializeCarousel() {
   const carouselSwiper = new Swiper(".carousel-swiper", {
     slidesPerView: 1,
     spaceBetween: 0,
-    loop: false,
+    loop: true,
+    loopAdditionalSlides: 2,
     initialSlide: 0,
     autoHeight: true,
     allowTouchMove: true,
@@ -517,9 +516,6 @@ function initializeCarousel() {
       }
     }
   });
-  
-  // Ensure we start at the first slide
-  carouselSwiper.slideTo(0, 0);
 }
 
 // Setup Section Navigation (show/hide sections with toggle)
